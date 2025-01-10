@@ -8,5 +8,5 @@ def products_list_view(request):
     context = {
         "shops": shops
     }
-    return render(request, 'shop/products_list.html')
+    return render(request, 'shop/products_list.html',context)
 

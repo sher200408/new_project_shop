@@ -19,5 +19,5 @@ def blog_detail_view(request,pk):
         }
         return render(request,'blogs/blog_detail.html',context)
     else:
-        return render(request,'pages/404.html')
+        return render(request,'pages/404.html',)
 
