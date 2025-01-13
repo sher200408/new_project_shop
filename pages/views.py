@@ -1,6 +1,7 @@
 from dbm import error
 
 from django.shortcuts import render
+from pyexpat.errors import messages
 
 from pages.forms import ContactForm
 from pages.models import CantectModel
@@ -19,19 +20,12 @@ def contact_page_view(request):
     elif request.method == 'POST':
         forms = ContactForm(request.POST)
         if forms.is_valid():
-            date = forms.data
-            CantectModel.objects.create(
-                name=date['name'],
-                email=date['email'],
-                subject=date['subject'],
-                text=date['text']
-            )
+            forms.save()
+            messages.success(request, "Your contact information is sent to database ")
             return render(request, 'pages/contact.html')
         else:
-            context = {
-                'errors':forms.errors
-            }
-            return render(request,'pages/contact.html',context)
+            messages.error(request, "Something getting wrong please try again later")
+            return render(request,'pages/contact.html')
 
 
 
