@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class CantectModel(models.Model):
+class CantactModel(models.Model):
     objects = True
     name = models.CharField(max_length=128)
     email = models.EmailField()

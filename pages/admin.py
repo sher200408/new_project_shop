@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from pages.models import CantectModel
+from pages.models import CantactModel
 
 # Register your models here.
-admin.site.register(CantectModel)
+admin.site.register(CantactModel)

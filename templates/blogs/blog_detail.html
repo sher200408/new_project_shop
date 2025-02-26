@@ -32,23 +32,23 @@
                     <div class="col-lg-8">
                         <div class="single-blog-box">
                             <div class="main-figure">
-                                <a href="blog_detail.html"><img src="{{ blogs.image.url }}" alt="Blog"></a>
+                                <a href="blog_detail.html"><img src="{{ blog.image.url }}" alt="Blog"></a>
                             </div>
                             <div class="blog-content">
                                 <ul class="entry-meta">
-                                    <li><a href="#"><i class="fas fa-clock"></i>{{ blogs.created_at }}</a></li>
-                                    <li><a href="#"><i class="fas fa-user"></i>by <span>{{ blogs.author.username }}</span></a></li>
+                                    <li><a href="#"><i class="fas fa-clock"></i>{{ blog.created_at }}</a></li>
+                                    <li><a href="#"><i class="fas fa-user"></i>by <span>{{ blog.author.username }}</span></a></li>
                                     <li><a href="#"><i class="fas fa-comments"></i>Comments <span>(03)</span></a></li>
                                     <li><a href="#"><i class="fas fa-heart"></i><span>59</span></a></li>
                                 </ul>
-                                <h3 class="item-title"><a href="blog_detail.html">{{ blogs.title }}</a></h3>
-                                <p class="item-details">{{ blogs.long_description  }}</p>
+                                <h3 class="item-title"><a href="blog_detail.html">{{ blog.title }}</a></h3>
+                                <p class="item-details">{{ blog.long_description  }}</p>
                              </div>
                             <div class="tag-share">
                                 <ul>
                                     <li>
                                         <ul class="inner-tag">
-                                            {% for tag in blogs.hashtags.all %}
+                                            {% for tag in blog.hashtags.all %}
                                             <li>
                                                 <a href="#">{{tag.title}}</a>
                                             </li>
@@ -190,24 +190,6 @@
                                             <label>Comment :</label>
                                             <textarea placeholder="" class="textarea form-control" name="message" rows="7"
                                                 cols="20" data-error="Message field is required" required></textarea>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label>Name :</label>
-                                            <input type="text" placeholder="" class="form-control" name="name"
-                                                data-error="Name field is required" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label>E-mail :</label>
-                                            <input type="email" placeholder="" class="form-control" name="email"
-                                                data-error="E-mail field is required" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                        <div class="col-md-4 form-group">
-                                            <label>Website :</label>
-                                            <input type="email" placeholder="" class="form-control" name="email"
-                                                data-error="E-mail field is required" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                         <div class="col-12 form-group mb-0">

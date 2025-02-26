@@ -21,7 +21,7 @@ class BlogHashtagModel(models.Model):
 
 
 class BlogModel(models.Model):
-    objects = None
+    objects = True
     author = models.ForeignKey(
         User,
             on_delete=models.SET_NULL,

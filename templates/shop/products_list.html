@@ -43,41 +43,30 @@
                                 </select>
                             </div>
                         </div>
-
+                        
                         <div class="row">
-                           {% for shop in shops %}
-                                    <div class="col-md-4 col-sm-6 col-12">
-                                        <div class="shop-box-layout1">
-                                            <div class="mask-item bg--accent">
-                                                <div class="item-figure job">
-                                                    <img src="{{shop.image.url}}" alt="Product">
-                                                </div>
-<!--                                                <ul class="act  ion-items">-->
-<!--                                                    <li>-->
-<!--                                                        <a href="#">-->
-<!--                                                            <i class="fas fa-shopping-cart"></i>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                    <li>-->
-<!--                                                        <a href="#">-->
-<!--                                                            <i class="fas fa-exchange-alt"></i>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                    <li>-->
-<!--                                                        <a href="#">-->
-<!--                                                            <i class="fas fa-heart"></i>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                </ul>-->
+                            {% for shop in shops %}
+                                <div class="col-md-4 col-sm-6 col-12">
+                                    <div class="shop-box-layout1">
+                                        <div class="mask-item bg--accent">
+                                            <div class="item-figure job">
+                                                <img src="{{ shop.images.url }}" alt="Product">
                                             </div>
-                                            <div class="item-content">
-                                                <h3 class="item-title"><a href="single-shop.html">{{shop.title}}</a></h3>
-                                                <div class="item-price"><span class="currency">$</span>{{shop.price}}</div>
+                                        </div>
+                                        <div class="item-content">
+                                            <h3 class="item-title">
+                                                <a href="{% url 'shop:products-detail' pk=shop.id %}">{{ shop.title }}</a>
+                                            </h3>
+                                            <div class="item-price">
+                                                <span class="currency">$</span>{{ shop.price }}
                                             </div>
                                         </div>
                                     </div>
-                          {%endfor%}
+                                </div>
+                            {% endfor %}
                         </div>
+
+
 
 
                         <ul class="pagination-layout1">
@@ -117,41 +106,13 @@
                             </div>
                             <div class="widget-categories">
                                 <ul>
-                                    <li>
-                                        <a href="#">BreakFast
-                                            <span>25</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lunch
-                                            <span>15</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Pasta
-                                            <span>22</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Dinner
-                                            <span>18</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Dessert
-                                            <span>36</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Drinks
-                                            <span>12</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Fruits
-                                            <span>05</span>
-                                        </a>
-                                    </li>
+                                    {% for cat in categories %}
+                                        <li>
+                                            <a href="#">{{ cat.title }}
+                                                <span>{{ cat.shops.count }}</span>
+                                            </a>
+                                        </li>
+                                    {% endfor%}
                                 </ul>
                             </div>
                         </div>

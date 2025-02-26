@@ -81,10 +81,15 @@ WSGI_APPLICATION = 'Conf.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'shop',
+        'USER': 'postgres',
+        'PASSWORD': 'sherxan2004',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -132,10 +137,10 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUserModel'
-
-EMAIL_BACKEND = 'django .core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gamil.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'sanjarbekwork@gmail.com'
-EMAIL_HOST_PASSWORD = 'llzc ngfi szis djeh'
+#
+# EMAIL_BACKEND = 'django .core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gamil.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'sanjarbekwork@gmail.com'
+# EMAIL_HOST_PASSWORD = 'llzc ngfi szis djeh'

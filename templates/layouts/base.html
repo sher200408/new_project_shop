@@ -39,9 +39,11 @@
 <![endif]-->
 
 <!-- Preloader Start Here -->
-{%if 'contact' not in request.path and 'shop' not in request.path and 'category' not in request.path%}
+{% url 'pages:contact' as contact %}
+{% url 'shop:products-list' as shop %}
+{%if request.path != contact and request.path != shop%}
         <div id="preloader"></div>
-    {% endif %}
+{% endif %}
 <!-- Preloader End Here -->
 <!-- ScrollUp Start Here -->
 <a href="#wrapper" data-type="section-switch" class="scrollup">
